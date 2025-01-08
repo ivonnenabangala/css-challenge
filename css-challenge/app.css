@@ -1,0 +1,566 @@
+/* app.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #f8f9fae7;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 90vh; 
+}
+
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+}
+
+.image-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Image opacity */
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    /* top: 0; */
+    /* left: -20px; */
+    width: auto;
+    height: 100%;
+    z-index: 2; 
+    color: white;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+@media screen and (max-width:700px) {
+    .nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.nav-right a, .nav-right button {
+    color: white;
+    text-decoration: none;
+    /* margin-left: 15px; */
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+.nav-right button{
+    background-color: #007BFF !important;
+    color: white !important;
+    img{
+        width: 20px;
+    }
+}
+
+.nav-right button {
+    background: white;
+    color: black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.hero-body {
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    /* width: 40%; */
+}
+
+.hero-body h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-body p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-body .hero-cards{
+    margin-top: 60px;
+    color: black;
+}
+.quote-btn, .learn-more-btn {
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.quote-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.learn-more-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.hero-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-around;
+    gap: 30px;
+    position: absolute;
+    top: 85%;
+    left: 12%;
+    color: black;
+}
+
+.hero-card{
+    width: 20%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+}
+.hero-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 500px) {
+    .hero-cards {
+        flex-direction: column;
+        align-items: center; 
+        gap: 20px;
+        position: relative;
+        top: 50%;
+    }
+
+    .hero-card {
+        width: 80%; 
+    }
+}
+.sub-container {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    margin-top: 200px;
+    .cards{
+        width: 70%;
+        margin: auto;
+    }
+}
+.main {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    width: 20%;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.testimonials {
+    margin: 60px 0 120px 0; /* Removed left margin since .main centers it */
+    gap: 30px;
+    width: 100%; /* Use the full width of the parent container */
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+    justify-content: space-between; /* Ensure equal spacing for 3 cards */
+}
+
+.testimonials-card {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Three cards per row with spacing */
+    box-sizing: border-box;
+    margin: 10px 0; /* Add vertical spacing between rows */
+}
+.testimonials-card img {
+    max-width: 100%; /* Ensures the image scales down to fit the card */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Centers the image within its container */
+    margin: 0 auto; /* Align the image horizontally */
+}
+
+.checked {
+    color: orange;
+}
+
+/* Responsive styles */
+@media (max-width: 1000px) {
+    .testimonials-card {
+        width: calc(33.33% - 20px); /* Maintain three cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-card {
+        width: calc(50% - 20px); /* Two cards per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-card {
+        width: 100%; /* Full width for very small screens */
+    }
+}
+.vectors{
+    margin: 60px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    img{
+        width: 50px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .vectors{
+        margin: 60px 0;
+        width: 100%;
+        img{
+            width: 30px;
+        }
+    }
+}
+.newsletter {
+    color: white;
+    background: rgb(22, 13, 182);
+    background: linear-gradient(90deg, rgba(22, 13, 182, 1) 0%, rgba(52, 7, 88, 1) 35%, rgba(255, 0, 249, 1) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    gap: 15px; /* Adds spacing between flex items */
+}
+
+.newsletter .text p {
+    font-weight: bolder;
+    padding-left: 20px;
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center text for smaller screens */
+}
+
+.newsletter .email {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    background: white;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px; /* Adds spacing inside the email container */
+}
+
+.newsletter .email input {
+    border: none;
+    padding-left: 20px;
+    flex: 1; /* Allows input to take available space */
+    min-width: 0; /* Prevents overflow on small screens */
+}
+
+.newsletter .email button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        flex-direction: column;
+        text-align: center; 
+    }
+
+    .newsletter .email {
+        width: 100%; 
+        justify-content: center;
+        gap: 10px; 
+    }
+
+    .newsletter .email input {
+        flex: none;
+        width: 50%; 
+    }
+
+    .newsletter .email button {
+        width: auto; 
+    }
+}
+
+
+.pricing{
+    margin: 76px 0;
+}
+.price-cards{
+    width: 100%;
+}
+.price-card {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid aquamarine;
+    border-radius: 8px;
+    padding: 20px 0px;
+}
+.price-card .middle-card{
+    color: white;
+    height: 500px;
+}
+.price-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.includes{
+    display: flex;
+    width: 80%;
+    padding: 0 40px;
+}
+.price-btn{
+    width: 70%;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+}
+.price{
+    display: flex;
+    justify-content: center;
+    border: 10px solid black;
+    align-items: center;
+}
+.price .amount{
+    border: 10px solid red;
+    font-weight: bolder; color: #3992f1;
+}
+.price .currency{
+    border: 10px solid rebeccapurple;
+    align-items: center;
+}
+.appointment-container {
+    background-color: #192841;
+    position: relative;
+    margin-bottom: 180px;
+}
+
+.branches {
+    display: flex;
+    color: white;
+    padding: 64px 240px;
+    height: 400px;
+}
+
+.branches img {
+    width: 100%;
+}
+
+.form {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    top: 60%;
+    left: 25%;
+}
+
+.form img {
+    height: 400px;
+    width: auto;
+}
+
+.form-card {
+    padding: 20px;
+}
+
+.form-card h2 {
+    text-align: center;
+}
+
+.form-card input,
+.form-card select {
+    width: 360px;
+    padding: 5px 20px;
+    background-color: rgb(236, 233, 233);
+    border: none;
+    margin: 10px 0;
+}
+
+.form-card button {
+    width: 360px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 280px;
+}
+.contact button{
+    background-color: #007BFF;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    width: 120px;
+}
+
+@media screen and (max-width: 700px) {
+    .branches {
+        flex-direction: column;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        height: auto;
+    }
+
+    .branches .text h1,
+    .branches .text p {
+        text-align: center;
+    }
+
+    .branches img {
+        width: 100%;
+    }
+
+    .form {
+        position: static; /* Removes absolute positioning */
+        margin: 20px auto 0; /* Centers the form and adds spacing */
+        width: 90%; /* Ensures the form fits within smaller screens */
+        flex-direction: column; /* Stacks the image and form card */
+        align-items: center;
+    }
+
+    .form img {
+        height: auto;
+        width: 100%; /* Adjusts the image width for smaller screens */
+        max-width: 300px; /* Optional: Limits the maximum size */
+    }
+
+    .form-card {
+        width: 100%;
+        max-width: 400px; /* Ensures form-card doesn't stretch too wide */
+        padding: 20px;
+    }
+
+    .form-card input,
+    .form-card select {
+        width: 80%; /* Full width for inputs and selects */
+    }
+
+    .form-card button {
+        width: 100%; /* Full width for the button */
+    }
+    .contact{
+        margin-top: 32px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    padding: 20px;
+    background-color: #f8f8f8; 
+}
+
+.footer div {
+    display: flex;
+    flex-direction: column; 
+    flex: 1; 
+    margin: 10px; 
+    min-width: 200px; 
+}
+
+.footer h4 {
+    margin-bottom: 10px; 
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333; 
+    margin-bottom: 8px; 
+}
+
+.footer a:hover {
+    color: #007bff; 
+}
+
+@media (max-width: 500px) {
+    .footer {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .footer div {
+        width: 100%; 
+        max-width: 400px; 
+        text-align: center; 
+    }
+
+    .footer a {
+        margin-bottom: 12px; 
+    }
+}
+
