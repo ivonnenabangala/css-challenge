@@ -92,6 +92,18 @@ body, html {
     border-radius: 5px;
     padding: 5px 10px;
 }
+.links .icon{
+    display: none;
+}
+@media screen and (max-width: 600px){
+    .links a{
+        display: none;
+    }
+    .links a.icon{
+        float: right;
+        display: block;
+    }
+}
 
 .hero-body {
     justify-content: center;
@@ -157,6 +169,11 @@ body, html {
     height: 50px;
     margin-bottom: 10px;
 }
+@media screen and (max-width: 1200px) {
+    .hero-cards{
+        left: 2%;
+    }
+}
 @media screen and (max-width: 500px) {
     .hero-cards {
         position: static;
@@ -221,6 +238,11 @@ body, html {
 @media (max-width: 526px) {
     .sub-container{
         margin-top: 500px;
+    }
+}
+@media (max-width: 400px) {
+    .sub-container{
+        margin-top: 600px;
     }
 }
 
@@ -376,6 +398,11 @@ body, html {
     border-radius: 8px;
     padding: 20px 0px;
 }
+@media screen and (max-width: 816px) {
+    .price-card{
+        margin-bottom: 10px;
+    }
+}
 
 .price-card img {
     width: 50px;
@@ -457,6 +484,18 @@ body, html {
     background-color: rgb(236, 233, 233);
     border: none;
     margin: 10px 0;
+}
+@media screen and (max-width: 1200px) {
+    .form{
+        width: 60%;
+    }
+    .form-card input, .form-card select, .form-card button{
+        max-width: 170px;
+        margin-left: 10px;
+    }
+    .form-card input, .form-card select, .form-card button, .form-card label{
+        margin-left: 15px;
+    }
 }
 
 .form-card button {
